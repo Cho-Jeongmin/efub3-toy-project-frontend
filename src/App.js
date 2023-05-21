@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Nav from "./components/Nav";
 import Profile from "./pages/Profile";
 import Detail from "./pages/Detail";
+import TweetForm from "./components/TweetForm";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/detail/:tweetId" element={<Detail />} />
+          <Route path="/tweet-form" element={<TweetForm />} />
         </Routes>
       </Container>
     </BrowserRouter>
