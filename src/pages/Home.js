@@ -29,7 +29,7 @@ const Home = () => {
   return (
     <div>
       {tweets.map((tweet) => (
-        <Tweet tweet={tweet} />
+        <Tweet key={tweet.tweetId} tweet={tweet} />
       ))}
     </div>
   );
