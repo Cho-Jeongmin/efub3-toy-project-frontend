@@ -22,7 +22,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   border-right: 1px solid grey;
-  width: 400px;
+  width: 150px;
   height: 97vh;
 `;
 

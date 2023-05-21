@@ -18,7 +18,6 @@ function App() {
 
 const Container = styled.div`
   display: flex;
-  border-right: 1px solid grey;
 `;
 
 export default App;

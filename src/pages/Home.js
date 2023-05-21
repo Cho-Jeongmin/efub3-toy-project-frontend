@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import styled from "styled-components";
 import Tweet from "../components/Tweet";
 
 const Home = () => {
@@ -27,12 +28,18 @@ const Home = () => {
   //     getTweets;
   //   }, []);
   return (
-    <div>
+    <Container>
       {tweets.map((tweet) => (
         <Tweet key={tweet.tweetId} tweet={tweet} />
       ))}
-    </div>
+    </Container>
   );
 };
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid grey;
+`;
 
 export default Home;
