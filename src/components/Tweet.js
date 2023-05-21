@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 const Tweet = ({ tweet }) => {
   return (
@@ -8,7 +9,7 @@ const Tweet = ({ tweet }) => {
         <Id>{tweet.accountId}</Id>
         <Date>{tweet.createdDate}</Date>
       </Header>
-      <Content>{tweet.content}</Content>
+      <Content to={`/detail/${tweet.tweetId}`}>{tweet.content}</Content>
     </Container>
   );
 };
@@ -34,6 +35,10 @@ const Date = styled.div`
   font-weight: lighter;
 `;
 
-const Content = styled.div``;
+const Content = styled(NavLink)`
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+`;
 
 export default Tweet;
