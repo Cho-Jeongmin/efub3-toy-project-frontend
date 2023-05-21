@@ -5,26 +5,26 @@ import styled from "styled-components";
 const id = 123;
 
 const Profile = () => {
-  const [account, setAccount] = useState({
-    accountId: 123,
-    userId: "Jamie0829",
-    name: "조정민",
-    email: "jojm0829@gmail.com",
-  });
-  //   const getAccount = async () => {
-  //     const response = await axios.get(`/accounts/${id}`);
-  //     setAccount(response.data);
-  //   };
-  //   useEffect(() => {
-  //     getAccount;
-  //   }, []);
-  return (
+  const [account, setAccount] = useState();
+  const getAccount = async () => {
+    const response = await axios.get(
+      `https://bfc331a4-84cf-4bd4-bb28-2e47ea49816d.mock.pstmn.io/accounts/${id}`
+    );
+    setAccount(response.data);
+    console.log(response.data);
+  };
+  useEffect(() => {
+    getAccount();
+  }, []);
+  return account ? (
     <Container>
       <Header>
         <Name>{account.name}</Name>
         <AccontId>{`@${account.accountId}`}</AccontId>
       </Header>
     </Container>
+  ) : (
+    <div>loading</div>
   );
 };
 
