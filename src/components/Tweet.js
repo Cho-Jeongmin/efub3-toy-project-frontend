@@ -16,7 +16,6 @@ const Tweet = ({ tweet }) => {
 const Container = styled.div`
   border-bottom: 1px solid grey;
   padding: 20px;
-  width: 500px;
 `;
 
 const Header = styled.div`

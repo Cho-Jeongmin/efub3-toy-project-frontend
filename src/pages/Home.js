@@ -40,6 +40,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   border-right: 1px solid grey;
+  width: 500px;
 `;
 
 export default Home;
