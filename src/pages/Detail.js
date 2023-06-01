@@ -6,10 +6,13 @@ import styled from "styled-components";
 const Detail = () => {
   const { tweetId } = useParams();
   const [tweet, setTweet] = useState();
+
+  const client = axios.create();
+  client.defaults.baseURL = "http://52.78.210.126:8080";
+  client.defaults.withCredentials = true;
+
   const getTweet = async () => {
-    const response = await axios(
-      `https://bfc331a4-84cf-4bd4-bb28-2e47ea49816d.mock.pstmn.io/tweets/${tweetId}`
-    );
+    const response = await client.get(`/tweets/${tweetId}`);
     setTweet(response.data);
     console.log(response.data);
   };

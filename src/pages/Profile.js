@@ -2,14 +2,17 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
 
-const id = 123;
+const accountId = 123;
 
 const Profile = () => {
   const [account, setAccount] = useState();
+
+  const client = axios.create();
+  client.defaults.baseURL = "http://52.78.210.126:8080";
+  client.defaults.withCredentials = true;
+
   const getAccount = async () => {
-    const response = await axios.get(
-      `https://bfc331a4-84cf-4bd4-bb28-2e47ea49816d.mock.pstmn.io/accounts/${id}`
-    );
+    const response = await client.get(`/accounts/${accountId}`);
     setAccount(response.data);
     console.log(response.data);
   };

@@ -11,11 +11,16 @@ const TweetForm = () => {
   const onChange = (event) => {
     setText(event.target.value);
   };
+
+  const client = axios.create();
+  client.defaults.baseURL = "http://52.78.210.126:8080";
+  client.defaults.withCredentials = true;
+
   const onSubmit = async () => {
-    const response = await axios.post(
-      "https://bfc331a4-84cf-4bd4-bb28-2e47ea49816d.mock.pstmn.io/tweets",
-      { accountId: accountId, content: text }
-    );
+    const response = await client.post("/tweets", {
+      accountId: accountId,
+      content: text,
+    });
     console.log(response);
     navigate("/");
   };
