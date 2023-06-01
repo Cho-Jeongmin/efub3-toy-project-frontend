@@ -38,5 +38,5 @@
       "last 1 safari version"
     ]
   },
-  "propxy": "http://52.78.210.126:8080"
+  "proxy": "http://52.78.210.126:8080"
 }

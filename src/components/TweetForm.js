@@ -17,9 +17,14 @@ const TweetForm = () => {
   client.defaults.withCredentials = true;
 
   const onSubmit = async () => {
-    const response = await client.post("/tweets", {
+    const data = {
       accountId: accountId,
       content: text,
+    };
+    const response = await client.post("/tweets", JSON.stringify(data), {
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
     console.log(response);
     navigate("/");
